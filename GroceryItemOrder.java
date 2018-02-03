@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GroceryItemOrder {
 
-    //Fields
+//Fields
     Scanner input = new Scanner(System.in);
     private int quantity = 1;
     private double pricePerUnit;
@@ -41,7 +41,7 @@ public class GroceryItemOrder {
     }
 //methods
 
-    /*
+
     public GroceryItemOrder createItem(int quantity, double pricePerUnit, String itemName){
         this.quantity = input.nextInt();
         this.pricePerUnit = input.nextDouble();
@@ -49,8 +49,8 @@ public class GroceryItemOrder {
         GroceryItemOrder ting = new GroceryItemOrder(quantity,pricePerUnit,itemName);
         return ting;
     }
-*/
-    // få mægnde og prisen i forhold til mængde
+
+    // få mængde og prisen i forhold til mængde
     public void getCost(GroceryItemOrder item)
     {
 
@@ -59,11 +59,12 @@ public class GroceryItemOrder {
 
 
 
+
     @Override
     public String toString() {
         return  "\n Grocery name: " + itemName
-                +"\n quantity =" + quantity +
-                "\n price per unit :" + pricePerUnit +
+                +"\n quantity = " + quantity +
+                "\n price per unit : " + pricePerUnit +
                 "\n";
     }
 }

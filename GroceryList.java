@@ -9,15 +9,21 @@ public class GroceryList {
    GroceryItemOrder [] groceryList;
    static final int maxGroceries = 10; // final da der altid vil være højst 10
 
-  /* public static void main(String[] args) {
+   public static void main(String[] args) {
 
         GroceryList test = new GroceryList();
 
         GroceryItemOrder Milk = new GroceryItemOrder(2,12,"Milk");
-        GroceryItemOrder Milk2 = new GroceryItemOrder(1,12,"Milk");
-        GroceryItemOrder Milk3 = new GroceryItemOrder(1,12,"Milk");
+      //  GroceryItemOrder Milk2 = new GroceryItemOrder(1,12,"Milk");
+       // GroceryItemOrder Milk3 = new GroceryItemOrder(1,12,"Milk");
         test.add(Milk);
-        test.add(Milk2);
+       test.add(Milk);
+       test.add(Milk);
+       test.add(Milk);
+
+
+        test.createItem2();
+        //test.add(Milk2);
        // Milk.getCost(Milk);
 
 
@@ -25,7 +31,7 @@ public class GroceryList {
       //  System.out.println(test.totalGroceries);
        // System.out.println(test.getTotalCost());
         System.out.println(test);
-    } */
+    }
 
    public GroceryList()
    {
@@ -49,14 +55,41 @@ public class GroceryList {
        }
        return totalCost;
    }
+
+    public void createItem2()
+    {
+        GroceryItemOrder grocery = new GroceryItemOrder(
+                indtastQuan(),
+                indtastPPU(),
+                indtastName()
+        );
+        add(grocery);
+    }
+
+    public int indtastQuan()
+    {
+        System.out.println("Input quantity: ");
+
+        return input.nextInt();
+    }
+
+    public double indtastPPU()
+    {
+        System.out.println("Input price per unit: ");
+        return input.nextDouble();
+    }
+
+    public String indtastName()
+    {
+        System.out.println("Input item name: ");
+        String name = input.next(); // blev nød til at gøre det sådan her ellers skippede den navn
+        return name;
+    }
 /*
    private GroceryItemOrder inputItem() {
        System.out.println("Input item");
 
-
-
 Random test stuff
-
 
        return inputItem();
    }

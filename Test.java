@@ -1,7 +1,7 @@
 public class Test {
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         GroceryList test = new GroceryList();
 
         GroceryItemOrder Milk = new GroceryItemOrder(2,12,"Milk");
@@ -11,5 +11,5 @@ public class Test {
         test.add(Milk2);
         System.out.println(test);
     }
-
+*/
 }
