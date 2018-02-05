@@ -39,32 +39,40 @@ public class GroceryItemOrder {
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
-//methods
-
-
-    public GroceryItemOrder createItem(int quantity, double pricePerUnit, String itemName){
-        this.quantity = input.nextInt();
-        this.pricePerUnit = input.nextDouble();
-        this.itemName = input.nextLine();
-        GroceryItemOrder ting = new GroceryItemOrder(quantity,pricePerUnit,itemName);
-        return ting;
-    }
+//methods og diverse
 
     // få mængde og prisen i forhold til mængde
     public void getCost(GroceryItemOrder item)
     {
-
-        System.out.println("Quantity:"+(item.getQuantity()) + " Price: " + item.pricePerUnit * quantity);
+        System.out.println("Quantity: "+(item.getQuantity()) + " Price: " + item.pricePerUnit * quantity);
     }
 
 
+    public int indtastQuan()
+    {
+        System.out.println("Input quantity: ");
 
+        return input.nextInt();
+    }
+
+    public double indtastPPU()
+    {
+        System.out.println("Input price per unit: ");
+        return input.nextDouble();
+    }
+
+    public String indtastName()
+    {
+        System.out.println("Input item name: ");
+        String name = input.next(); // blev nød til at gøre det sådan her ellers skippede den navn
+        return name;
+    }
 
     @Override
     public String toString() {
         return  "\n Grocery name: " + itemName
                 +"\n quantity = " + quantity +
-                "\n price per unit : " + pricePerUnit +
+                "\n Price : " + (pricePerUnit*quantity) +
                 "\n";
     }
 }
