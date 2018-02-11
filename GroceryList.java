@@ -7,13 +7,10 @@ public class GroceryList {
    private int totalGroceries = 0;
    private double totalCost = 0.00;
 
+
    GroceryItemOrder [] groceryList;
    final int maxGroceries = 10; // final da der altid vil være højst 10
 
-   public static void main(String[] args) {
-
-
-    }
 // constructor
    public GroceryList()
    {
@@ -35,15 +32,9 @@ public class GroceryList {
        for(int count = 0; count < this.totalGroceries; count++){
            totalCost = totalCost + (groceryList[count].getPricePerUnit()*groceryList[count].getQuantity());
        }
-       System.out.println(totalCost);
+       System.out.println(totalCost + " DKK");
    }
 // to string
-   /* @Override
-    public String toString() {
-        return
-             "Grocery List: " +  Arrays.toString(groceryList);
-    }
-    */
     public String toString(){
        String item = "";
         for (int i = 0; i < totalGroceries; i++) {

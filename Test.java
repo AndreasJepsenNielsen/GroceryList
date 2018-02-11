@@ -1,6 +1,7 @@
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -13,36 +14,30 @@ public class Test {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-
-
-        File file = new File("itemNames.txt");
-        //lavStreamNavne("\nMilk\n","Cookies");
         lavStreamNavne(names);
 
 
         GroceryList test = new GroceryList();
-
-        Scanner text = new Scanner(file);
-
+        GroceryList2 test2 = new GroceryList2();
 
 
-        GroceryItemOrder Milk = new GroceryItemOrder(2, 12,readFile(1) );
-        GroceryItemOrder Cookies = new GroceryItemOrder(3, 15,readFile(2) );
-        GroceryItemOrder ToiletPaper = new GroceryItemOrder(2, 27,readFile(3) );
-        GroceryItemOrder Tea = new GroceryItemOrder(1,30 ,readFile(4) );
-        GroceryItemOrder Butter = new GroceryItemOrder(3,11 ,readFile(5) );
-        GroceryItemOrder Cheese = new GroceryItemOrder(1,45 ,readFile(6) );
-        GroceryItemOrder Cola = new GroceryItemOrder(2,12 ,readFile(7) );
-        GroceryItemOrder Bacon = new GroceryItemOrder(4,6 ,readFile(8) );
-        GroceryItemOrder Ham = new GroceryItemOrder(1,5 ,readFile(9) );
+
+
+
+        GroceryItemOrder Milk = new GroceryItemOrder(2, 12.5,readFile(1) );
+        GroceryItemOrder Cookies = new GroceryItemOrder(3, 15.5,readFile(2) );
+        GroceryItemOrder ToiletPaper = new GroceryItemOrder(2, 27.5,readFile(3) );
+        GroceryItemOrder Tea = new GroceryItemOrder(1,30.75 ,readFile(4) );
+        GroceryItemOrder Butter = new GroceryItemOrder(3,11.75 ,readFile(5) );
+        GroceryItemOrder Cheese = new GroceryItemOrder(1,45.50 ,readFile(6) );
+        GroceryItemOrder Cola = new GroceryItemOrder(2,12.50 ,readFile(7) );
+        GroceryItemOrder Bacon = new GroceryItemOrder(4,6.75 ,readFile(8) );
+        GroceryItemOrder Ham = new GroceryItemOrder(1,5.50 ,readFile(9) );
         GroceryItemOrder Whiskey = new GroceryItemOrder(1,100 ,readFile(10) );
 
         //  GroceryItemOrder Milk2 = new GroceryItemOrder(1,12,"Milk");
         // GroceryItemOrder Milk3 = new GroceryItemOrder(1,12,"Milk");
 
-        // hvis man prøver at tilføje mere end 10 overrider den bare objekterne, så der
-        //Kan tilføjes nye men gamle bliver fjernet.
-        // har dog lavet en else sætning som fortæller at indkøbskurven er fuld
         test.add(Milk);
         test.add(Cookies);
         test.add(ToiletPaper);
@@ -55,6 +50,22 @@ public class Test {
         test.add(Whiskey);
 
 
+        test2.add(Milk);
+        test2.add(Cookies);
+        test2.add(ToiletPaper);
+        test2.add(Tea);
+        test2.add(Butter);
+        test2.add(Cheese);
+        test2.add(Cola);
+        test2.add(Bacon);
+        test2.add(Ham);
+        test2.add(Whiskey);
+
+
+
+
+
+
 
         //test.getTotalCost();
         //Milk.getCost(Milk);
@@ -63,10 +74,12 @@ public class Test {
         // Milk.getCost(Milk);
 
 
-        //  System.out.println(test.totalGroceries);
+        // System.out.println(test.totalGroceries);
         // System.out.println(test.getTotalCost());
         System.out.println(test);
         test.getTotalCost();
+        System.out.println(test2);
+        test2.getTotalCost();
     }
 
     private static void lavStreamNavne(String itemNames) {
@@ -81,8 +94,6 @@ public class Test {
 
                 oos.writeObject(itemNames);
 
-              //  oos.writeChars(itemNames2);
-
 
             oos.close();
         } catch (FileNotFoundException eFNFE) {
@@ -95,23 +106,6 @@ public class Test {
 
     }
 
-  /*  public static String readFile() {
-
-        String string = new String();
-
-        File file = new File("itemNames.txt");
-
-        try {
-            Scanner sc = new Scanner(file);
-            while (sc.hasNext()) {
-                String str = sc.nextLine();
-
-
-            }
-        }
-
-        return string + "ane";
-    }*/
 
     public static String readFile(int index) {
         File file = new File("itemNames.txt");
@@ -124,19 +118,15 @@ public class Test {
                 Scanner scanner = new Scanner(new BufferedReader(new FileReader(file)));
 
                     while(i < index) {
-                        scanner.nextLine();
+                        scanner.nextLine(); // bruges til at skippe linjer
                         i++;
                     }
-
-
 
                 while (scanner.hasNextLine()) {
 
 
 
                 line = scanner.nextLine();
-
-                    //line = scanner.next(Files.readAllLines(Paths.get("itemNames.txt")).get(index));
 
                     break;
                 }

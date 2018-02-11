@@ -64,7 +64,7 @@ public class GroceryItemOrder {
     public String indtastName()
     {
         System.out.println("Input item name: ");
-        String name = input.next(); // blev nød til at gøre det sådan her ellers skippede den navn
+        String name = input.next();
         return name;
     }
 
