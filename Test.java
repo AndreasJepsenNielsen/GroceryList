@@ -1,7 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -35,8 +32,6 @@ public class Test {
         GroceryItemOrder Ham = new GroceryItemOrder(1,5.50 ,readFile(9) );
         GroceryItemOrder Whiskey = new GroceryItemOrder(1,100 ,readFile(10) );
 
-        //  GroceryItemOrder Milk2 = new GroceryItemOrder(1,12,"Milk");
-        // GroceryItemOrder Milk3 = new GroceryItemOrder(1,12,"Milk");
 
         test.add(Milk);
         test.add(Cookies);
